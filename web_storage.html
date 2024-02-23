@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Storage</title>
+</head>
+<body>
+  <textarea id="text_box" rows="5" cols="60"></textarea>
+  <script type="text/javascript">
+    const text_box = document.getElementById('text_box');
+    if (localStorage['text_box']) {
+      text_box.value = localStorage['text_box'];
+    }
+    // save text when key is pressed
+    text_box.onkeydown = function (e) {
+      localStorage['text_box'] = text_box.value;
+    };
+  </script>
+</body>
+</html>
